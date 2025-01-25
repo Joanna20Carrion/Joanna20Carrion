@@ -15,6 +15,10 @@ Aquí hay algunas de las tecnologías y herramientas que utilizo:
 
 ![Estadísticas de GitHub](https://github-readme-stats.vercel.app/api?username=Joanna20Carrion&show_icons=true&theme=radical)
 
+## 🏆 Trofeos de GitHub
+
+![Trofeo de GitHub](https://github-profile-trophy.vercel.app/?username=tu_nombre_de_usuario&theme=juicyfresh&title=Repositories,Stars,Commits,Followers,PullRequest,MultipleLang&margin-w=20)
+
 ## 🌱 Actualmente estoy aprendiendo
 
 - Python
