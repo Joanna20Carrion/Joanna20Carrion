@@ -17,10 +17,10 @@ Aquí hay algunas de las tecnologías y herramientas que utilizo:
 
 ## 🌱 Actualmente estoy aprendiendo
 
-- [Python]
-- [AI]
-- [Power BI]
-- [Tableau]
+- Python
+- AI
+- Power BI
+- Tableau
 
 ## 📫 Conéctame
 
