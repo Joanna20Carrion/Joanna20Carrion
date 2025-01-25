@@ -17,7 +17,7 @@ Aquí hay algunas de las tecnologías y herramientas que utilizo:
 
 ## 🏆 Trofeos de GitHub
 
-![Trofeo de GitHub](https://github-profile-trophy.vercel.app/?username=tu_nombre_de_usuario&theme=juicyfresh&title=Repositories,Stars,Commits,Followers,PullRequest,MultipleLang&margin-w=20)
+![Trofeo de GitHub](https://github-profile-trophy.vercel.app/?username=Joanna20Carrion&theme=juicyfresh&title=Repositories,Stars,Commits,Followers,PullRequest,MultipleLang&margin-w=20)
 
 ## 🌱 Actualmente estoy aprendiendo
 
