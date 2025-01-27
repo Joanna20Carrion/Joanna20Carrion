@@ -1,7 +1,7 @@
 # 👩‍💻 Hola, soy Joanna Carrión Pérez
 Desarrolladora apasionada | Ciencia de Datos 📊 | Inteligencia Artificial 🤖 | Sistemas Embebidos 🔧
 
-##🌟 Sobre mí
+## 🌟 Sobre mí
 
 Soy una desarrolladora dedicada con experiencia en ciencia de datos, inteligencia artificial y sistemas embebidos. Mi formación académica en Ingeniería Electrónica y mi constante participación en proyectos técnicos han fortalecido mis habilidades en el diseño, implementación y optimización de soluciones tecnológicas innovadoras. Me encanta explorar nuevas tecnologías, enfrentar desafíos complejos y contribuir a proyectos interdisciplinarios que generan impacto.
 
