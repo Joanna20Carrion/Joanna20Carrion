@@ -1,4 +1,4 @@
-# 👋 Hola, soy Joanna Carrion
+# 👋 Hola, soy Joanna Carrión Pérez
 
 Soy una desarrolladora apasionada con experiencia en ciencia de datos, etc. Me encanta aprender nuevas tecnologías y enfrentar desafíos interesantes.
 
