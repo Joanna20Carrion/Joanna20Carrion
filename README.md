@@ -1,4 +1,4 @@
-# 👩‍💻 Hola, soy Joanna Carrión Pérez
+# 👩‍💻 Hola, soy Joanna Carrión
 Desarrolladora apasionada | Ciencia de Datos 📊 | Inteligencia Artificial 🤖 | Sistemas Embebidos 🔧
 
 ## 🌟 Sobre mí
