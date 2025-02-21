@@ -1,5 +1,24 @@
-# 👩‍💻 Hola, soy Joanna Carrión
-Desarrolladora apasionada | Ciencia de Datos 📊 | Inteligencia Artificial 🤖 | Sistemas Embebidos 🔧
+---
+
+<!-- Efecto de escritura automática -->
+<h1 align="center">
+  <a href="#" id="typewriter"></a>
+</h1>
+
+<script>
+const text = "👩‍💻 Hola, soy Joanna Carrión";
+let i = 0;
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("typewriter").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 150);
+  }
+}
+document.addEventListener("DOMContentLoaded", typeWriter);
+</script>
+
+🚀 **Desarrolladora apasionada** | 📊 **Ciencia de Datos** | 🤖 **Inteligencia Artificial** | 🔧 **Sistemas Embebidos**  
 
 ## 🌟 Sobre mí
 
