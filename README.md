@@ -31,11 +31,10 @@ Aquí hay algunas de las tecnologías y herramientas que utilizo:
 
 ## 🌱 Actualmente estoy aprendiendo
 
-- Python
-- AI
-- HTML
-- CSS
-- Power BI
+- 🐍 **Python**
+- 🤖 **Inteligencia Artificial**
+- 🌐 **HTML y CSS**
+- 📊 **Power BI**
 
 ## 📫 Conéctame
 
@@ -47,4 +46,4 @@ Aquí hay algunas de las tecnologías y herramientas que utilizo:
 - [Sistema de Detección y Clasificación de Objetos con MATLAB](https://github.com/Joanna20Carrion/Sistema-de-Deteccion-y-Clasificacion-de-Botellas-con-MATLAB): Diseño de un sistema de procesamiento de imágenes con MATLAB para detectar y clasificar botellas por color y tamaño, utilizando una cámara para la segmentación y procesamiento de máscaras de color.
 - [Reconocimiento de Voz con Redes Neuronales y Transformada Wavelet](https://github.com/Joanna20Carrion/Reconocimiento-de-Voz-con-Redes-Neuronales-y-Transformada-Wavelet): Implementa un sistema de reconocimiento de voz capaz de identificar comandos básicos utilizando redes neuronales y análisis de señales basado en la transformada wavelet.
   
-¡Gracias por visitar mi perfil! Estoy emocionada de conectar y colaborar en proyectos interesantes.
+✨ ¡Gracias por visitar mi perfil! Estoy emocionada de conectar y colaborar en proyectos interesantes.
