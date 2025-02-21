@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=22&pause=1000&color=F7A5FF&center=true&vCenter=true&width=600&lines=%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB+Hola%2C+soy+Joanna+Carri%C3%B3n!;%F0%9F%9A%80+Desarrolladora+Apasionada;%F0%9F%A7%96%E2%80%8D%E2%99%82%EF%B8%8F+Ciencia+de+Datos+%7C+IA+%7C+Sistemas+Embebidos" alt="Typing SVG">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=22&pause=1000&color=F7A5FF&center=true&vCenter=true&width=600&lines=%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB+Hola%2C+soy+Joanna+Carri%C3%B3n!" alt="Typing SVG">
 </p>
 
 🚀 **Desarrolladora apasionada** | 📊 **Ciencia de Datos** | 🤖 **Inteligencia Artificial** | 🔧 **Sistemas Embebidos**  
