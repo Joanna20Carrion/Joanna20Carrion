@@ -21,7 +21,7 @@ Soy una desarrolladora dedicada con experiencia en ciencia de datos, inteligenci
 
 ## 📈 Mis estadísticas
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Joanna20Carrion&theme=radical" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Joanna20Carrion&theme=radical" alt="GitHub Streak" /> 
   <img src="https://github-readme-stats.vercel.app/api?username=Joanna20Carrion&show_icons=true&theme=radical" alt="GitHub Stats" />
 </p>
 
