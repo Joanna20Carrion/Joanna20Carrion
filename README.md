@@ -42,7 +42,7 @@ Soy una desarrolladora dedicada con experiencia en ciencia de datos, inteligenci
 ---
 
 ## 🌱 Actualmente estoy aprendiendo
-- 🐍 **Python**
+- 🐍 **Python** 
 - 🤖 **Inteligencia Artificial**
 - 🌐 **HTML y CSS**
 - 📊 **Power BI**
