@@ -1,7 +1,7 @@
 <h1 align="center">🚀 ¡Hola, soy <span style="color:#F7A5FF">Joanna Carrión</span>! 👩‍💻</h1>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=22&pause=1000&color=F7A5FF&center=true&vCenter=true&width=800&lines=🚀+Desarrolladora+Apasionada;📊+Ciencia+de+Datos;🤖+Inteligencia+Artificial;🔧+Sistemas+Embebidos" alt="Typing SVG">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=22&pause=1000&color=F7A5FF&center=true&vCenter=true&width=800&lines=☀️+Desarrolladora+Apasionada;📊+Ciencia+de+Datos;🤖+Inteligencia+Artificial;🔧+Sistemas+Embebidos" alt="Typing SVG">
 </p>
 
 ---
