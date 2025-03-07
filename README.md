@@ -71,4 +71,4 @@ Soy una desarrolladora dedicada con experiencia en ciencia de datos, inteligenci
 
 ---
 
-✨ ¡Gracias por visitar mi perfil! Estoy emocionada de conectar y colaborar en proyectos interesantes. 🚀
+✨ ¡Gracias por visitar mi perfil! Estoy emocionada de conectar y colaborar en proyectos interesantes. 🚀 
