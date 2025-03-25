@@ -42,7 +42,7 @@
 
 ## 🛠 Lenguajes más utilizados
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Joanna20Carrion&layout=compact&theme=radical" alt="Top Langs" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Joanna20Carrion&layout=compact&langs_count=100&theme=tokyonight" alt="Top Languages" />
 </p>
 
 ---
