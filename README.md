@@ -35,7 +35,7 @@
 
 ## 🏆 Trofeos de GitHub
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Joanna20Carrion&theme=juicyfresh&title=Repositories,Stars,Commits,Followers,PullRequest,MultipleLang&margin-w=20" alt="GitHub Trophies" />
+  <img src="https://github-profile-trophy.vercel.app/?username=Joanna20Carrion&theme=juicyfresh&title=LongTimeUser,Followers,Experience,Stars,Commits,Issues,PullRequest,Repositories,Reviews&margin-w=20" alt="GitHub Trophies" />
 </p>
 
 ---
