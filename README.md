@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Joanna20Carrion/Joanna20Carrion/raw/main/Banner.png" alt="Joanna Carrión Banner" width="100%">
+  <img src="https://github.com/Joanna20Carrion/Joanna20Carrion/raw/main/Portada.png" alt="Joanna Carrión Banner" width="100%">
 </p>
 
 <p align="center">
