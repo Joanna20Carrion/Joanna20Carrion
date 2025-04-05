@@ -1,20 +1,25 @@
-<h1 align="center">🚀 ¡Hola, soy <span style="color:#F7A5FF">Joanna Carrión</span>! 👩‍💻</h1>
+<h1 align="center">🚀 Joanna Carrión</h1>
+<p align="center"><strong>Sistemas Embebidos | Ciencia de Datos | IA & Machine Learning</strong></p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=22&pause=1000&color=F7A5FF&center=true&vCenter=true&width=800&lines=☀️+Desarrolladora+Apasionada;📊+Ciencia+de+Datos;🤖+Inteligencia+Artificial;🔧+Sistemas+Embebidos" alt="Typing SVG">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=22&pause=1000&color=007ACC&center=true&vCenter=true&width=800&lines=Desarrolladora+Apasionada;Exploradora+de+Ciencia+de+Datos;IA+%26+Machine+Learning;Ingeniera+en+Sistemas+Embebidos" alt="Typing SVG">
 </p>
 
 ---
 
 ## 🌟 Sobre mí
 
-👩‍💻 Soy una desarrolladora apasionada con experiencia en **Ciencia de Datos, Inteligencia Artificial y Sistemas Embebidos**. Mi formación en **Ingeniería Electrónica** y mi participación en proyectos interdisciplinarios han fortalecido mis habilidades en el diseño e implementación de soluciones tecnológicas innovadoras. Me motiva explorar nuevas tecnologías, enfrentar desafíos complejos y contribuir a iniciativas con impacto real. 🚀
+Soy una desarrolladora apasionada con experiencia en **Ciencia de Datos**, **Inteligencia Artificial** y **Sistemas Embebidos**.  
+Egresada en **Ingeniería Electrónica**, he participado en proyectos interdisciplinarios que fortalecieron mis habilidades para diseñar e implementar soluciones tecnológicas innovadoras.
+
+Me motiva explorar nuevas tecnologías, resolver desafíos complejos y contribuir con iniciativas de impacto.
 
 📌 **Áreas de Interés:**
-- 🤖 Inteligencia Artificial y Machine Learning
-- 📊 Ciencia de Datos y Analítica
-- 🔧 Sistemas Embebidos y Hardware
-- 🛰️ Visión por Computadora y Procesamiento de Señales
+- Inteligencia Artificial y Machine Learning  
+- Ciencia de Datos y Analítica  
+- Sistemas Embebidos y Hardware  
+- Visión por Computadora y Procesamiento de Señales  
+
 
 ---
 
@@ -73,14 +78,17 @@
 ## 📝 Proyectos destacados
 
 - 📌 **[Use a Pre-trained Image Classifier to Identify Dog Breeds](https://github.com/Joanna20Carrion/Dog-Breed-Classification-Using-Pretrained-Models)**
-  - 🐶 Implementa un sistema para clasificar razas de perros utilizando modelos de clasificación de imágenes previamente entrenados. Combina técnicas de aprendizaje profundo y procesamiento de imágenes para identificar diferentes razas de perros a partir de imágenes.
+  - Implementa un sistema para clasificar razas de perros utilizando modelos de clasificación de imágenes previamente entrenados. Combina técnicas de aprendizaje profundo y procesamiento de imágenes para identificar diferentes razas de perros a partir de imágenes.
 
 - 📌 **[Sistema de Detección y Clasificación de Objetos con MATLAB](https://github.com/Joanna20Carrion/Sistema-de-Deteccion-y-Clasificacion-de-Botellas-con-MATLAB)**
-  - 🔍 Diseño de un sistema de procesamiento de imágenes con MATLAB para detectar y clasificar botellas por color y tamaño, utilizando una cámara para la segmentación y procesamiento de máscaras de color.
+  - Diseño de un sistema de procesamiento de imágenes con MATLAB para detectar y clasificar botellas por color y tamaño, utilizando una cámara para la segmentación y procesamiento de máscaras de color.
 
 - 📌 **[Reconocimiento de Voz con Redes Neuronales y Transformada Wavelet](https://github.com/Joanna20Carrion/Reconocimiento-de-Voz-con-Redes-Neuronales-y-Transformada-Wavelet)**
-  - 🎙️ Implementa un sistema de reconocimiento de voz capaz de identificar comandos básicos utilizando redes neuronales y análisis de señales basado en la transformada wavelet.
+  - Implementa un sistema de reconocimiento de voz capaz de identificar comandos básicos utilizando redes neuronales y análisis de señales basado en la transformada wavelet.
 
 ---
 
-✨ ¡Gracias por visitar mi perfil! Estoy emocionada de conectar y colaborar en proyectos interesantes. 🚀 
+## 💡 En búsqueda constante
+
+Siempre estoy abierta a colaborar en proyectos innovadores y explorar tecnologías que transforman el futuro.  
+Si deseas conectar o trabajar conmigo, ¡estaré encantada de conversar!
