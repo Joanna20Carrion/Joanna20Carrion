@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="https://github.com/Joanna20Carrion/Joanna20Carrion/raw/main/assets/banner.png" alt="Joanna Carrión Banner" width="100%">
+</p>
 <h1 align="center">🚀 Joanna Carrión</h1>
 <p align="center"><strong>Sistemas Embebidos | Ciencia de Datos | IA & Machine Learning</strong></p>
 
