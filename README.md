@@ -1,11 +1,9 @@
 <p align="center">
   <img src="https://github.com/Joanna20Carrion/Joanna20Carrion/raw/main/Banner.png" alt="Joanna Carrión Banner" width="100%">
 </p>
-<h1 align="center">🚀 Joanna Carrión</h1>
-<p align="center"><strong>Sistemas Embebidos | Ciencia de Datos | IA & Machine Learning</strong></p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=22&pause=1000&color=007ACC&center=true&vCenter=true&width=800&lines=Desarrolladora+Apasionada;Exploradora+de+Ciencia+de+Datos;IA+%26+Machine+Learning;Ingeniera+en+Sistemas+Embebidos" alt="Typing SVG">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=22&pause=1000&color=007ACC&center=true&vCenter=true&width=800&lines=Ciencia+de+Datos;IA+%26+Machine+Learning;Ingeniera+en+Sistemas+Embebidos" alt="Typing SVG">
 </p>
 
 ---
