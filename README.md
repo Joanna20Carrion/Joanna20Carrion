@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=22&pause=1000&color=007ACC&center=true&vCenter=true&width=950&lines=Ciencia+de+Datos;IA+%26+Machine+Learning;Business+Intelligence+%26+Analytics;An%C3%A1lisis+de+Inteligencia+Comercial;Sistemas+Embebidos" alt="Typing SVG">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=22&pause=1000&color=007ACC&center=true&vCenter=true&width=1000&lines=Data+Analytics+%26+Business+Intelligence;Power+BI+%7C+SQL+%7C+Python;Machine+Learning+%26+Artificial+Intelligence;Data+Science+%26+Decision+Making;Process+Automation+%26+Digital+Solutions" alt="Typing SVG">
 </p>
 
 ---
