@@ -34,21 +34,6 @@ Me motiva explorar nuevas tecnologías, resolver desafíos complejos y contribui
 ## 📈 Mis estadísticas
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Joanna20Carrion&theme=radical" alt="GitHub Streak" /> 
-  <img src="https://github-readme-stats.vercel.app/api?username=Joanna20Carrion&show_icons=true&theme=radical" alt="GitHub Stats" />
-</p>
-
----
-
-## 🏆 Trofeos de GitHub
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Joanna20Carrion&theme=juicyfresh&title=LongTimeUser,Followers,Experience,Stars,Commits,Issues,PullRequest,Repositories,Reviews&margin-w=20" alt="GitHub Trophies" />
-</p>
-
----
-
-## 🛠 Lenguajes más utilizados
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Joanna20Carrion&layout=compact&langs_count=100&theme=tokyonight" alt="Top Languages" />
 </p>
 
 ---
