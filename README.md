@@ -28,7 +28,7 @@
 
 <br>
 
-<img src="https://komarev.com/ghpvc/?username=Joanna20Carrion&style=flat&color=007ACC&label=visitas+al+perfil" alt="visitas al perfil">
+<img src="https://api.visitorbadge.io/api/visitors?path=Joanna20Carrion&label=visitas%20al%20perfil&labelColor=%230d1117&countColor=%23007acc&style=flat" alt="visitas al perfil">
 
 </div>
 
