@@ -34,6 +34,8 @@
 
 ---
 
+<div align="center">
+
 ## ✨ Esta soy yo
 
 Hola, soy **Joanna**, egresada de **Ingeniería Electrónica** y desarrolladora apasionada por los datos.
