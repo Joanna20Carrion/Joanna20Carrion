@@ -3,9 +3,9 @@
 <!-- PANEL ANIMADO - terminal con mis datos + retrato de píxeles.
      Generado por scripts/generate_banner.py. Cambia ?v=N después de regenerarlo. -->
 <picture>
-  <source media="(prefers-color-scheme: dark)"  srcset="assets/banner-dark.svg?v=1">
-  <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg?v=1">
-  <img src="assets/banner-dark.svg?v=1" width="100%" alt="joanna@data: ./profile.sh --live">
+  <source media="(prefers-color-scheme: dark)"  srcset="assets/banner-dark.svg?v=2">
+  <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg?v=2">
+  <img src="assets/banner-dark.svg?v=2" width="100%" alt="joanna@data: ./profile.sh --live">
 </picture>
 
 <!-- Si quieres mantener tu portada también, quita los guiones de esta línea:
@@ -28,7 +28,7 @@
 
 <br>
 
-<img src="https://api.visitorbadge.io/api/visitors?path=Joanna20Carrion&label=visitas%20al%20perfil&labelColor=%230d1117&countColor=%23007acc&style=flat" alt="visitas al perfil">
+<img src="https://komarev.com/ghpvc/?username=Joanna20Carrion&style=flat&color=007ACC&label=visitas+al+perfil" alt="visitas al perfil">
 
 </div>
 

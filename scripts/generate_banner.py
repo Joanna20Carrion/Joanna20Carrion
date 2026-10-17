@@ -6,10 +6,13 @@ Genera el panel animado del perfil de GitHub de Joanna Carrión.
 
 Crea assets/banner-dark.svg y assets/banner-light.svg:
   - Izquierda: una terminal que "escribe" tus datos línea por línea.
-  - Derecha: tu foto convertida en un retrato de píxeles azules que se arma
-    solo, con un fondo de píxeles que cambian de color, y tres mini datos.
+  - Derecha: un carrusel de píxeles que se disuelve de una imagen a otra:
+    tu retrato y luego íconos de tus áreas (BI, SQL, redes neuronales,
+    visión, señales, embebidos, código, commits). Debajo, el nombre de cada
+    imagen; al lado, tres mini datos.
 
-Para cambiar textos edita LINES o TILES; para cambiar la foto reemplaza
+Para cambiar textos edita LINES o TILES; los íconos están en
+scripts/pixel_icons.py (lista ICONS); para cambiar la foto reemplaza
 assets/foto.png (mejor con fondo blanco). Luego vuelve a ejecutar el script
 y cambia ?v=N en el README para que GitHub no muestre la versión vieja.
 """
@@ -18,6 +21,8 @@ import random
 from xml.sax.saxutils import escape
 
 from PIL import Image, ImageOps
+
+from pixel_icons import ICONS
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ASSETS = os.path.normpath(os.path.join(HERE, "..", "assets"))
@@ -47,6 +52,10 @@ PHOTO = os.path.join(ASSETS, "foto.png")
 CROP = (55, 0, 345, 290)   # recorte cuadrado (izq, arriba, der, abajo) sobre la foto de 400x400
 GRID = 48                  # retrato de 48 x 48 píxeles
 PITCH, CELL = 6, 5         # separación y tamaño de cada píxel
+PORTRAIT_S = 5.0           # segundos que se ve el retrato
+ICON_S = 3.0               # segundos que se ve cada ícono
+FADE_S = 0.4               # duración del fundido de cada píxel
+JITTER_S = 0.7             # desfase aleatorio por píxel (efecto disolución)
 
 # ---------------------------------------------------------------- temas
 THEMES = {
@@ -146,13 +155,25 @@ def build(theme_name: str, levels) -> str:
     a(f"@keyframes b1{{0%,100%{{fill:{bk[0]}}}50%{{fill:{bk[1]}}}}}")
     a(f"@keyframes b2{{0%,100%{{fill:{bk[1]}}}50%{{fill:{bk[2]}}}}}")
     a(f"@keyframes b3{{0%,100%{{fill:{bk[0]}}}45%{{fill:{bk[3]}}}60%{{fill:{bk[2]}}}}}")
-    a("@keyframes rv{0%{opacity:0;transform:scale(.2)}100%{opacity:1;transform:scale(1)}}")
-    a("@keyframes tw{0%,100%{fill-opacity:1}50%{fill-opacity:.55}}")
+    # carrusel: cada imagen aparece y desaparece en su turno dentro de un ciclo de CYCLE segundos
+    cycle = PORTRAIT_S + ICON_S * len(ICONS)
+
+    def frame_kf(name, hold):
+        p = lambda s: f"{s / cycle * 100:.2f}%"
+        return (f"@keyframes {name}{{0%{{opacity:0}}{p(FADE_S)}{{opacity:1}}{p(hold)}{{opacity:1}}"
+                f"{p(hold + FADE_S)}{{opacity:0}}100%{{opacity:0}}}}")
+    a(frame_kf("fp", PORTRAIT_S))
+    a(frame_kf("fi", ICON_S))
+    a(f".fp{{animation:fp {cycle}s linear infinite both}}")
+    a(f".fi{{animation:fi {cycle}s linear infinite both}}")
+    durs = [2.6, 3.4, 4.2, 5.0, 6.2]
+    for k in range(4):
+        for j, d in enumerate(durs):
+            a(f".b{k}{j}{{animation:b{k} {d}s ease-in-out infinite}}")
     a("@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}")
     a("@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}")
     a(".cur{animation:blink 1s steps(1) infinite}")
     a(".pulse{animation:pulse 1.6s ease-in-out infinite}")
-    a(".p{transform-box:fill-box;transform-origin:center}")
     a("</style>")
 
     a('<defs>')
@@ -234,25 +255,51 @@ def build(theme_name: str, levels) -> str:
       f'font-weight="700">{GRID}×{GRID}</text>')
 
     ramp = [lerp_hex(t["ramp"], i / (LEVELS - 1)) for i in range(LEVELS)]
+    # capa de fondo: píxeles que titilan siempre
     a('<g>')
     for r in range(GRID):
         for c in range(GRID):
             x, y = gx + c * PITCH, gy + r * PITCH
-            lv = levels[r][c]
-            if lv is None:
-                k = rnd.choices(["b0", "b1", "b2", "b3"], weights=[40, 30, 18, 12])[0]
-                dur = rnd.choice([2.6, 3.4, 4.2, 5.0, 6.2])
-                a(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="1.2" fill="{bk[0]}" '
-                  f'style="animation:{k} {dur}s ease-in-out -{rnd.uniform(0, 5):.2f}s infinite"/>')
-            else:
-                # se arma en diagonal, de arriba-izquierda a abajo-derecha, con un poco de azar
-                d = 0.4 + (r + c) * 0.03 + rnd.uniform(0, 0.25)
-                anim = f"rv .45s ease-out {d:.2f}s both"
-                if rnd.random() < 0.18:
-                    anim += f",tw {rnd.choice([2.2, 3.0, 3.8])}s ease-in-out {d + 1 + rnd.uniform(0, 3):.2f}s infinite"
-                a(f'<rect class="p" x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="1.2" '
-                  f'fill="{ramp[lv]}" style="animation:{anim}"/>')
+            if rnd.random() < 0.6:  # solo una parte titila, para que el SVG sea liviano
+                a(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" fill="{bk[rnd.choice([0, 0, 1])]}"/>')
+                continue
+            k = rnd.choices(range(4), weights=[40, 30, 18, 12])[0]
+            j = rnd.randrange(5)
+            a(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" fill="{bk[0]}" class="b{k}{j}" '
+              f'style="animation-delay:-{rnd.uniform(0, 6):.2f}s"/>')
     a('</g>')
+
+    def icon_level(i):
+        """Intensidad 0..1 -> índice de la rampa (claro=destacado en oscuro, al revés en claro)."""
+        if theme_name == "dark":
+            return min(LEVELS - 1, round(2 + i * 7))
+        return max(0, round((1 - i) * 7))
+
+    # carrusel: retrato y luego cada ícono, píxel por píxel con un desfase aleatorio
+    starts = [0.3] + [0.3 + PORTRAIT_S + k * ICON_S for k in range(len(ICONS))]
+    a('<g>')  # retrato (visible también si el visor no anima)
+    for r in range(GRID):
+        for c in range(GRID):
+            lv = levels[r][c]
+            if lv is not None:
+                d = starts[0] + rnd.uniform(0, JITTER_S)
+                a(f'<rect x="{gx + c * PITCH}" y="{gy + r * PITCH}" width="{CELL}" height="{CELL}" '
+                  f'fill="{ramp[lv]}" class="fp" style="animation-delay:{d:.2f}s"/>')
+    a('</g>')
+    for k, (_, fn) in enumerate(ICONS):
+        cv = fn()
+        s0 = starts[k + 1]
+        a('<g>')
+        for (r, c), i in sorted(cv.px.items()):
+            d = s0 + rnd.uniform(0, JITTER_S)
+            a(f'<rect x="{gx + c * PITCH}" y="{gy + r * PITCH}" width="{CELL}" height="{CELL}" '
+              f'fill="{ramp[icon_level(i)]}" class="fi" opacity="0" style="animation-delay:{d:.2f}s"/>')
+        for (c, r, w, h, i) in cv.blocks:
+            d = s0 + rnd.uniform(0, JITTER_S)
+            a(f'<rect x="{gx + c * PITCH}" y="{gy + r * PITCH}" width="{w * PITCH - (PITCH - CELL)}" '
+              f'height="{h * PITCH - (PITCH - CELL)}" rx="3" fill="{ramp[icon_level(i)]}" class="fi" '
+              f'opacity="0" style="animation-delay:{d:.2f}s"/>')
+        a('</g>')
 
     # barrido de luz vertical sobre el retrato
     a(f'<rect clip-path="url(#gridclip)" x="{gx}" y="{gy - 50}" width="{gsz}" height="50" fill="url(#scan)">'
@@ -266,7 +313,12 @@ def build(theme_name: str, levels) -> str:
         a(f'<rect x="{gx + 44 + i * 13}" y="{ly - 9}" width="10" height="10" rx="2" '
           f'fill="{ramp[round(i * (LEVELS - 1) / 4)]}"/>')
     a(f'<text x="{gx + 44 + 5 * 13 + 4}" y="{ly}" font-size="11" fill="{t["muted"]}">más</text>')
-    a(f'<text x="{gx + gsz}" y="{ly}" font-size="11" fill="{t["muted"]}" text-anchor="end">foto → datos</text>')
+    # nombre de la imagen que se está mostrando, sincronizado con el carrusel
+    labels = ["joanna.png"] + [lab for lab, _ in ICONS]
+    for k, lab in enumerate(labels):
+        cls, op = ("fp", "") if k == 0 else ("fi", ' opacity="0"')
+        a(f'<text x="{gx + gsz}" y="{ly}" font-size="11" fill="{t["accent"]}" text-anchor="end" '
+          f'class="{cls}"{op} style="animation-delay:{starts[k] + 0.2:.2f}s">{escape(lab)}</text>')
 
     # mini datos apilados a la derecha
     tx2 = gx + gsz + 12
