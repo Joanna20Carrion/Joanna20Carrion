@@ -52,10 +52,11 @@ PHOTO = os.path.join(ASSETS, "foto.png")
 CROP = (55, 0, 345, 290)   # recorte cuadrado (izq, arriba, der, abajo) sobre la foto de 400x400
 GRID = 48                  # retrato de 48 x 48 píxeles
 PITCH, CELL = 6, 5         # separación y tamaño de cada píxel
-PORTRAIT_S = 5.0           # segundos que se ve el retrato
-ICON_S = 3.0               # segundos que se ve cada ícono
+PORTRAIT_S = 7.0           # segundos que se ve el retrato
+ICON_S = 7.0               # segundos que se ve cada ícono
 FADE_S = 0.4               # duración del fundido de cada píxel
-JITTER_S = 0.7             # desfase aleatorio por píxel (efecto disolución)
+JITTER_S = 0.8             # desfase entre grupos de píxeles (efecto disolución)
+SUB = 6                    # grupos de píxeles por imagen
 
 # ---------------------------------------------------------------- temas
 THEMES = {
@@ -260,7 +261,7 @@ def build(theme_name: str, levels) -> str:
     for r in range(GRID):
         for c in range(GRID):
             x, y = gx + c * PITCH, gy + r * PITCH
-            if rnd.random() < 0.6:  # solo una parte titila, para que el SVG sea liviano
+            if rnd.random() < 0.85:  # solo una parte titila, para que el SVG sea liviano
                 a(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" fill="{bk[rnd.choice([0, 0, 1])]}"/>')
                 continue
             k = rnd.choices(range(4), weights=[40, 30, 18, 12])[0]
@@ -275,31 +276,38 @@ def build(theme_name: str, levels) -> str:
             return min(LEVELS - 1, round(2 + i * 7))
         return max(0, round((1 - i) * 7))
 
-    # carrusel: retrato y luego cada ícono, píxel por píxel con un desfase aleatorio
+    # carrusel: retrato y luego cada ícono. Los píxeles de cada imagen se reparten en
+    # SUB grupos con un pequeño desfase entre sí: se ve como una disolución, pero el
+    # navegador solo anima unos pocos grupos (liviano y fluido en GitHub).
     starts = [0.3] + [0.3 + PORTRAIT_S + k * ICON_S for k in range(len(ICONS))]
-    a('<g>')  # retrato (visible también si el visor no anima)
+    offs = [JITTER_S * j / (SUB - 1) for j in range(SUB)]
+
+    def emit_frame(k, rects, cls):
+        buckets = [[] for _ in range(SUB)]
+        for rect in rects:
+            buckets[rnd.randrange(SUB)].append(rect)
+        for j, bucket in enumerate(buckets):
+            op = "" if k == 0 else ' opacity="0"'  # sin animación se ve el retrato
+            a(f'<g class="{cls}"{op} style="animation-delay:{starts[k] + offs[j]:.2f}s">')
+            a("".join(bucket))
+            a('</g>')
+
+    rects = []
     for r in range(GRID):
         for c in range(GRID):
             lv = levels[r][c]
             if lv is not None:
-                d = starts[0] + rnd.uniform(0, JITTER_S)
-                a(f'<rect x="{gx + c * PITCH}" y="{gy + r * PITCH}" width="{CELL}" height="{CELL}" '
-                  f'fill="{ramp[lv]}" class="fp" style="animation-delay:{d:.2f}s"/>')
-    a('</g>')
+                rects.append(f'<rect x="{gx + c * PITCH}" y="{gy + r * PITCH}" width="{CELL}" '
+                             f'height="{CELL}" fill="{ramp[lv]}"/>')
+    emit_frame(0, rects, "fp")
     for k, (_, fn) in enumerate(ICONS):
         cv = fn()
-        s0 = starts[k + 1]
-        a('<g>')
-        for (r, c), i in sorted(cv.px.items()):
-            d = s0 + rnd.uniform(0, JITTER_S)
-            a(f'<rect x="{gx + c * PITCH}" y="{gy + r * PITCH}" width="{CELL}" height="{CELL}" '
-              f'fill="{ramp[icon_level(i)]}" class="fi" opacity="0" style="animation-delay:{d:.2f}s"/>')
-        for (c, r, w, h, i) in cv.blocks:
-            d = s0 + rnd.uniform(0, JITTER_S)
-            a(f'<rect x="{gx + c * PITCH}" y="{gy + r * PITCH}" width="{w * PITCH - (PITCH - CELL)}" '
-              f'height="{h * PITCH - (PITCH - CELL)}" rx="3" fill="{ramp[icon_level(i)]}" class="fi" '
-              f'opacity="0" style="animation-delay:{d:.2f}s"/>')
-        a('</g>')
+        rects = [f'<rect x="{gx + c * PITCH}" y="{gy + r * PITCH}" width="{CELL}" height="{CELL}" '
+                 f'fill="{ramp[icon_level(i)]}"/>' for (r, c), i in sorted(cv.px.items())]
+        rects += [f'<rect x="{gx + c * PITCH}" y="{gy + r * PITCH}" width="{w * PITCH - (PITCH - CELL)}" '
+                  f'height="{h * PITCH - (PITCH - CELL)}" rx="3" fill="{ramp[icon_level(i)]}"/>'
+                  for (c, r, w, h, i) in cv.blocks]
+        emit_frame(k + 1, rects, "fi")
 
     # barrido de luz vertical sobre el retrato
     a(f'<rect clip-path="url(#gridclip)" x="{gx}" y="{gy - 50}" width="{gsz}" height="50" fill="url(#scan)">'
